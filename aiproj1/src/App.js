@@ -25,7 +25,7 @@ function App() {
         }
       }
       const response = await axios.post('http://localhost:5000/completions',body,config);
-      setans(response.data.choices[0].message.content)
+      setans(response.data.choices[0].message.content);
     }
     catch(err){
       console.log(err);

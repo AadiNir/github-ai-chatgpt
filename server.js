@@ -20,7 +20,7 @@ app.post('/completions',async(req,res)=>{
         body:JSON.stringify({
             model:"gpt-3.5-turbo",
             messages:[{role:"user",content:req.body.message}],
-            max_tokens:100
+            max_tokens:200
 
         })
 
@@ -29,7 +29,7 @@ app.post('/completions',async(req,res)=>{
 
     const respones = await fetch('https://api.openai.com/v1/chat/completions',options);
     const ans = await respones.json();
-    console.log(req.body.name)
+    console.log(req.body.message)
     res.send(ans);
    }catch(err){
     console.log(err);
